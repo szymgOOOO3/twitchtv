@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strimerki</title>
+    <style>
+        input[name="strmrname"] {
+            border: 0;
+            border-bottom: 1px solid gray;
+            color: navy;
+        }
+        button[onclick="czyść()"] {
+            width: 5rem;
+            height: 5rem;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://cdn.discordapp.com/attachments/443050795177345035/920432944437399603/No_title.png" alt="Quick sr streamer link creator v1.0"><br>
+    <table>
+        <tr>
+            <td>
+                streamelements.com/
+                <input name="strmrname" list="strmrsPL" id="se">
+                /mediarequest
+            </td>
+            <td><button onclick="streamelements()"> >> </button></td>
+        </tr>
+        <tr>
+            <td>
+                nightbot.tv/t/
+                <input name="strmrname" list="strmrsPL" id="nb">
+                /song_requests
+            </td>
+            <td><button onclick="nightbot()"> >> </button></td>
+        </tr>
+        <tr>
+            <td>
+                https://moo.bot/r/songlist#
+                <input name="strmrname" list="strmrsPL" id="mb">
+            </td>
+            <td><button onclick="moobot()"> >> </button></td>
+        </tr>
+        <tr><br></tr>
+        <tr>
+            <td>
+                https://www.twitch.tv/popout/
+                <input name="strmrname" list="strmrsPL" id="po">
+                /chat
+            </td>
+            <td><button onclick="chatpop()"> >> </button></td>
+        </tr>
+    </table><br>
+    <datalist id="strmrsPL">
+        <option value="vysotzky"></option>
+        <option value="zony"></option>
+	    <option value="lukisteve"></option>
+        <option value="sawardega"></option>
+        <option value="mrdzinold"></option>
+        <option value="rafonixszef"></option>
+        <option value="youngmulti"></option>
+        <option value="japczan"></option>
+        <option value="wujabudyn"></option>
+        <option value="xayoo_"></option>
+        <option value="xmerghani"></option>
+        <option value="sl3dziv"></option>
+        <option value="wylewiarz031"></option>  
+	    <option value="popo"></option>
+        <option value="isamu"></option>
+        <option value="mork"></option>
+        <option value="remsua"></option>
+        <option value="dmgpoland"></option>
+        <option value="1wron3k"></option>
+        <option value="holak1337"></option>
+        <option value="olszakumpel"></option>
+        <option value="cinkrofwest"></option>
+	    <option value="xntentacion"></option>
+        <option value="bremu"></option>
+        <option value="matixoxoo_"></option>
+        <option value="mamm0n"></option>
+        <option value="miszel"></option>
+        <option value="lewus"></option>
+        <option value="majastasko"></option>
+        <option value="dejvid_tibijski_zadymiarz"></option>
+        <option value="rybsonlol_"></option>
+        <option value="czukasz"></option>
+        <option value="kasix"></option>
+    </datalist>
+    <datalist id="strmrsEN">
+        <option value="loltyler1"></option>
+        <option value="xqcow"></option>
+        <option value="asmongold"></option>
+        <option value="adinross"></option>
+        <option value="mizkif"></option>
+        <option value="sodapoppin"></option>
+        <option value="trainwreckstv"></option>
+        <option value="summit1g"></option>
+        <option value="shroud"></option>
+    </datalist>
+    <button id="strmrslangC" onclick="krajC()">Polish</button>
+    <!--
+    <select name="strmrslang" id="strmrslang" onchange="kraj()">
+        <option value="Polish">Polish</option>
+        <option value="English">English</option>
+    </select>
+    -->
+
+    <h1><button onclick="czyść()">❌</button></h1>
+
+    <script>
+        function streamelements(){
+            var strmr = document.getElementById("se").value;
+            var link = "https://streamelements.com/" + strmr + "/mediarequest";
+            window.location.href = link
+        }
+        function nightbot(){
+            var strmr = document.getElementById("nb").value;
+            var link = "https://nightbot.tv/t/" + strmr + "/song_requests";
+            window.location.href = link
+        }
+        function moobot(){
+            var strmr = document.getElementById("mb").value;
+            var link = "https://moo.bot/r/songlist#" + strmr;
+            window.location.href = link
+        }
+        function chatpop(){
+            var strmr = document.getElementById("po").value;
+            var link = "https://www.twitch.tv/popout/" + strmr + "/chat";
+            window.open(link, '_blank');
+        }
+        
+        function kraj(){
+            var strmrslang = document.getElementById('strmrslang');
+            if(strmrslang.value=="Polish"){
+                document.getElementById("se").setAttribute('list', 'strmrsPL');
+                document.getElementById("nb").setAttribute('list', 'strmrsPL');
+                document.getElementById("mb").setAttribute('list', 'strmrsPL');
+            }
+            else if(strmrslang.value=="English"){
+                document.getElementById("se").setAttribute('list', 'strmrsEN');
+                document.getElementById("nb").setAttribute('list', 'strmrsEN');
+                document.getElementById("mb").setAttribute('list', 'strmrsEN');
+            }
+        }
+        function krajC(){
+            var strmrslang = document.getElementById('strmrslangC');
+            if(strmrslang.innerHTML=="Polish"){
+                document.getElementById("se").setAttribute('list', 'strmrsEN');
+                document.getElementById("nb").setAttribute('list', 'strmrsEN');
+                document.getElementById("mb").setAttribute('list', 'strmrsEN');
+                document.getElementById("po").setAttribute('list', 'strmrsEN');
+                strmrslang.innerHTML = "English"
+            }
+            else if(strmrslang.innerHTML=="English"){
+                document.getElementById("se").setAttribute('list', 'strmrsPL');
+                document.getElementById("nb").setAttribute('list', 'strmrsPL');
+                document.getElementById("mb").setAttribute('list', 'strmrsPL');
+                document.getElementById("po").setAttribute('list', 'strmrsPL');
+                strmrslang.innerHTML = "Polish"
+            }
+        }
+
+        function czyść(){
+            document.getElementById("se").value = "";
+            document.getElementById("nb").value = "";
+            document.getElementById("mb").value = "";
+            document.getElementById("po").value = ""
+        }
+    </script>
+</body>
+</html>
